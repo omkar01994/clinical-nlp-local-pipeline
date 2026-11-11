@@ -1,0 +1,59 @@
+name: clinical-nlp
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama-models:/root/.ollama
+    # No published port: your host may already run Ollama on 11434.
+    # The app reaches this container at http://ollama:11434 on the compose network.
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # One-shot job: pulls the tone LLM into the ollama volume (no-op if already present)
+  ollama-pull:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["ollama", "pull", "${TONE_LLM_MODEL:-llama3.2:3b}"]
+    restart: "no"
+
+  app:
+    build: .
+    image: clinical-nlp-pipeline:latest
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      TONE_LLM_MODEL: ${TONE_LLM_MODEL:-llama3.2:3b}
+      DEFAULT_TONE: ${DEFAULT_TONE:-empathetic}
+      DEVICE: cpu
+      REBUILD_INDEX: ${REBUILD_INDEX:-0}
+    volumes:
+      - ./data/knowledge_base:/app/data/knowledge_base:ro   # edit KB without rebuilding the image
+      - clinical-index:/app/data/index
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    image: clinical-nlp-web:latest
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "${WEB_PORT:-3000}:80"
+    restart: unless-stopped
+
+volumes:
+  ollama-models:
+  clinical-index:
