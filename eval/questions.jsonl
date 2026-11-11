@@ -1,0 +1,58 @@
+{"question": "How can I lower my blood pressure?", "expected": ["hypertension"], "type": "keyword"}
+{"question": "Is 145/95 too high for blood pressure?", "expected": ["hypertension"], "type": "keyword"}
+{"question": "my BP readings are always high, is that dangerous?", "expected": ["hypertension"], "type": "paraphrase"}
+{"question": "Can eating less salt help my heart?", "expected": ["hypertension", "cholesterol"], "type": "paraphrase"}
+{"question": "What are the symptoms of type 2 diabetes?", "expected": ["type2-diabetes"], "type": "keyword"}
+{"question": "I'm always thirsty and peeing a lot, what could cause that?", "expected": ["type2-diabetes"], "type": "paraphrase"}
+{"question": "How is high blood sugar diagnosed?", "expected": ["type2-diabetes"], "type": "keyword"}
+{"question": "what does an HbA1c test check for?", "expected": ["type2-diabetes"], "type": "keyword"}
+{"question": "What temperature counts as a fever?", "expected": ["fever-adult"], "type": "keyword"}
+{"question": "My temperature is 39.5, should I see a doctor?", "expected": ["fever-adult"], "type": "keyword"}
+{"question": "I feel hot and shivery, how do I bring my temperature down?", "expected": ["fever-adult"], "type": "paraphrase"}
+{"question": "When should I worry about a headache?", "expected": ["headache-red-flags", "migraine"], "type": "keyword"}
+{"question": "I hit my head and now have a bad headache", "expected": ["headache-red-flags"], "type": "keyword"}
+{"question": "worst headache of my life came on suddenly", "expected": ["headache-red-flags"], "type": "keyword"}
+{"question": "What causes chest pain?", "expected": ["chest-pain"], "type": "keyword"}
+{"question": "pain spreading to my left arm and jaw", "expected": ["chest-pain"], "type": "paraphrase"}
+{"question": "tight squeezing feeling in my chest", "expected": ["chest-pain", "asthma"], "type": "keyword"}
+{"question": "What are the signs of a stroke?", "expected": ["stroke-fast"], "type": "keyword"}
+{"question": "his face is drooping and his speech is slurred", "expected": ["stroke-fast"], "type": "paraphrase"}
+{"question": "what does FAST stand for?", "expected": ["stroke-fast"], "type": "keyword"}
+{"question": "my urine is dark yellow and I feel dizzy", "expected": ["dehydration"], "type": "keyword"}
+{"question": "How do I know if I'm dehydrated?", "expected": ["dehydration"], "type": "paraphrase"}
+{"question": "what should I drink after vomiting and diarrhea?", "expected": ["dehydration"], "type": "paraphrase"}
+{"question": "Do antibiotics help a cold?", "expected": ["common-cold"], "type": "keyword"}
+{"question": "runny nose and sneezing for 3 days", "expected": ["common-cold"], "type": "keyword"}
+{"question": "how long does a cold usually last?", "expected": ["common-cold"], "type": "keyword"}
+{"question": "What triggers asthma attacks?", "expected": ["asthma"], "type": "keyword"}
+{"question": "I wheeze when I exercise in cold air", "expected": ["asthma"], "type": "paraphrase"}
+{"question": "my inhaler isn't helping my breathing", "expected": ["asthma"], "type": "keyword"}
+{"question": "What is a migraine?", "expected": ["migraine"], "type": "keyword"}
+{"question": "throbbing headache with flashing lights before it", "expected": ["migraine"], "type": "keyword"}
+{"question": "headache with nausea and sensitivity to light", "expected": ["migraine"], "type": "keyword"}
+{"question": "my throat is swelling after eating peanuts", "expected": ["anaphylaxis"], "type": "paraphrase"}
+{"question": "when should I use an EpiPen?", "expected": ["anaphylaxis"], "type": "paraphrase"}
+{"question": "signs of a severe allergic reaction", "expected": ["anaphylaxis"], "type": "keyword"}
+{"question": "How can I lower my cholesterol?", "expected": ["cholesterol"], "type": "keyword"}
+{"question": "what is LDL?", "expected": ["cholesterol"], "type": "keyword"}
+{"question": "which foods should I cut down on for high cholesterol?", "expected": ["cholesterol"], "type": "keyword"}
+{"question": "How many hours of sleep do adults need?", "expected": ["sleep"], "type": "keyword"}
+{"question": "I can't sleep at night", "expected": ["sleep"], "type": "keyword"}
+{"question": "my partner says I snore loudly and stop breathing at night", "expected": ["sleep"], "type": "keyword"}
+{"question": "I always wake up exhausted and nod off during the day", "expected": ["sleep"], "type": "paraphrase"}
+{"question": "I feel nervous all the time and my heart races", "expected": ["anxiety"], "type": "paraphrase"}
+{"question": "how is anxiety treated?", "expected": ["anxiety"], "type": "keyword"}
+{"question": "constant worrying is ruining my daily life", "expected": ["anxiety"], "type": "paraphrase"}
+{"question": "I feel panicky and restless and can't relax", "expected": ["anxiety"], "type": "paraphrase"}
+{"question": "What is the capital of France?", "expected": [], "type": "non-medical"}
+{"question": "how do I fix my car engine", "expected": [], "type": "non-medical"}
+{"question": "best pizza recipe", "expected": [], "type": "non-medical"}
+{"question": "who won the last football world cup?", "expected": [], "type": "non-medical"}
+{"question": "how do I learn python programming?", "expected": [], "type": "non-medical"}
+{"question": "what will the weather be like tomorrow?", "expected": [], "type": "non-medical"}
+{"question": "how is a broken arm treated?", "expected": [], "type": "uncovered-medical"}
+{"question": "what are the symptoms of chickenpox?", "expected": [], "type": "uncovered-medical"}
+{"question": "how do I treat a sunburn?", "expected": [], "type": "uncovered-medical"}
+{"question": "what causes acne?", "expected": [], "type": "uncovered-medical"}
+{"question": "is ibuprofen safe during pregnancy?", "expected": [], "type": "uncovered-medical"}
+{"question": "what is chemotherapy?", "expected": [], "type": "uncovered-medical"}

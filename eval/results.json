@@ -1,0 +1,130 @@
+{
+  "n_in_scope": 46,
+  "n_out_of_scope": 12,
+  "n_keyword": 31,
+  "n_paraphrase": 15,
+  "ranking": {
+    "BM25 only": {
+      "top1": 0.8913043478260869,
+      "recall@3": 0.9347826086956522,
+      "mrr": 0.9195134575569359,
+      "top1_keyword": 1.0,
+      "top1_paraphrase": 0.6666666666666666
+    },
+    "ClinicalBERT only": {
+      "top1": 0.5652173913043478,
+      "recall@3": 0.8913043478260869,
+      "mrr": 0.7382850241545893,
+      "top1_keyword": 0.6129032258064516,
+      "top1_paraphrase": 0.4666666666666667
+    },
+    "Hybrid (alpha=0.3)": {
+      "top1": 0.9347826086956522,
+      "recall@3": 0.9782608695652174,
+      "mrr": 0.958498023715415,
+      "top1_keyword": 1.0,
+      "top1_paraphrase": 0.8
+    }
+  },
+  "alpha_sweep": {
+    "0.0": 0.8913043478260869,
+    "0.1": 0.9130434782608695,
+    "0.2": 0.9130434782608695,
+    "0.3": 0.9347826086956522,
+    "0.4": 0.9347826086956522,
+    "0.5": 0.8913043478260869,
+    "0.6": 0.8913043478260869,
+    "0.7": 0.8043478260869565,
+    "0.8": 0.7391304347826086,
+    "0.9": 0.6956521739130435,
+    "1.0": 0.5652173913043478
+  },
+  "gate_auroc": {
+    "BM25 max score": 0.9592391304347826,
+    "ClinicalBERT max cosine": 0.7916666666666666
+  },
+  "end_to_end": {
+    "overall": 0.8448275862068966,
+    "in_scope": 0.9130434782608695,
+    "non_medical_rejected": 0.6666666666666666,
+    "uncovered_medical_rejected": 0.5
+  },
+  "failures": [
+    {
+      "question": "I'm always thirsty and peeing a lot, what could cause that?",
+      "type": "paraphrase",
+      "expected": [
+        "type2-diabetes"
+      ],
+      "got": "chest-pain",
+      "correct": false
+    },
+    {
+      "question": "How do I know if I'm dehydrated?",
+      "type": "paraphrase",
+      "expected": [
+        "dehydration"
+      ],
+      "got": "(rejected)",
+      "correct": false
+    },
+    {
+      "question": "when should I use an EpiPen?",
+      "type": "paraphrase",
+      "expected": [
+        "anaphylaxis"
+      ],
+      "got": "sleep",
+      "correct": false
+    },
+    {
+      "question": "I feel panicky and restless and can't relax",
+      "type": "paraphrase",
+      "expected": [
+        "anxiety"
+      ],
+      "got": "(rejected)",
+      "correct": false
+    },
+    {
+      "question": "who won the last football world cup?",
+      "type": "non-medical",
+      "expected": [],
+      "got": "common-cold",
+      "correct": false
+    },
+    {
+      "question": "what will the weather be like tomorrow?",
+      "type": "non-medical",
+      "expected": [],
+      "got": "migraine",
+      "correct": false
+    },
+    {
+      "question": "how is a broken arm treated?",
+      "type": "uncovered-medical",
+      "expected": [],
+      "got": "stroke-fast",
+      "correct": false
+    },
+    {
+      "question": "what are the symptoms of chickenpox?",
+      "type": "uncovered-medical",
+      "expected": [],
+      "got": "common-cold",
+      "correct": false
+    },
+    {
+      "question": "what causes acne?",
+      "type": "uncovered-medical",
+      "expected": [],
+      "got": "chest-pain",
+      "correct": false
+    }
+  ],
+  "config": {
+    "alpha": 0.3,
+    "min_lexical_score": 1.0,
+    "passage_keep_ratio": 0.7
+  }
+}
